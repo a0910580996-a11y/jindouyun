@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>筋斗云快捷键总表</title>
+<style>
+  :root {
+    --bg: #f5efe4;
+    --panel: rgba(255, 252, 246, 0.82);
+    --panel-strong: rgba(255, 248, 238, 0.95);
+    --line: rgba(113, 78, 38, 0.16);
+    --text: #2f2418;
+    --muted: #76624d;
+    --accent: #c85f38;
+    --accent-2: #2f6d6a;
+    --shadow: 0 18px 40px rgba(83, 55, 26, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Microsoft YaHei UI", "PingFang SC", "Noto Sans SC", sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(200, 95, 56, 0.20), transparent 28%),
+      radial-gradient(circle at top right, rgba(47, 109, 106, 0.18), transparent 24%),
+      linear-gradient(180deg, #f8f2e8 0%, #efe5d4 100%);
+  }
+
+  .shell {
+    width: min(1120px, calc(100% - 32px));
+    margin: 32px auto;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: var(--panel);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
+  }
+
+  .hero {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: stretch;
+  }
+
+  .hero-card,
+  .section {
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: var(--panel-strong);
+    box-shadow: 0 10px 26px rgba(83, 55, 26, 0.06);
+  }
+
+  .hero-copy {
+    padding: 26px 28px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(200, 95, 56, 0.10);
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+
+  h1 {
+    margin: 16px 0 10px;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+  }
+
+  .lead {
+    margin: 0;
+    max-width: 36em;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .hero-meta {
+    display: grid;
+    gap: 14px;
+    padding: 22px;
+  }
+
+  .meta-block {
+    padding: 16px 18px;
+    border-radius: 18px;
+    background: rgba(47, 109, 106, 0.08);
+  }
+
+  .meta-label {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .meta-value {
+    margin-top: 8px;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  .grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 18px;
+  }
+
+  .section {
+    padding: 22px;
+  }
+
+  .section h2 {
+    margin: 0 0 16px;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .section-note {
+    margin: -4px 0 16px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .rows {
+    display: grid;
+    gap: 10px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 14px;
+    align-items: center;
+    padding: 12px 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(113, 78, 38, 0.08);
+  }
+
+  .keys {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  kbd {
+    min-width: 32px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(113, 78, 38, 0.14);
+    background: linear-gradient(180deg, #fffef9 0%, #f5ebdc 100%);
+    box-shadow: inset 0 -2px 0 rgba(113, 78, 38, 0.10);
+    font: 600 13px/1 "Consolas", "SFMono-Regular", monospace;
+    text-align: center;
+    color: #43311f;
+  }
+
+  .desc {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .accent {
+    color: var(--accent-2);
+    font-weight: 600;
+  }
+
+  .footer {
+    margin-top: 18px;
+    padding: 18px 22px;
+    border-radius: 22px;
+    border: 1px solid var(--line);
+    background: rgba(255, 251, 244, 0.86);
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  @media (max-width: 860px) {
+    .hero,
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-card hero-copy">
+        <div class="eyebrow">Windrider Cockpit</div>
+        <h1>筋斗云快捷键总表</h1>
+        <p class="lead">
+          筋斗云不是“把按钮堆满桌面”，而是把你常用的入口压缩成稳定、低摩擦的呼出层。
+          现在失败提示也改成了<span class="accent">非弹窗</span>：优先记日志，必要时只做短暂提示，不再打断当前节奏。
+        </p>
+      </div>
+      <aside class="hero-card hero-meta">
+        <div class="meta-block">
+          <div class="meta-label">默认打开方式</div>
+          <div class="meta-value">托盘图标 → <strong>快捷键总表</strong></div>
+        </div>
+        <div class="meta-block">
+          <div class="meta-label">失败处理</div>
+          <div class="meta-value">启动失败不再弹对话框，详细信息进入日志</div>
+        </div>
+        <div class="meta-block">
+          <div class="meta-label">游戏模式</div>
+          <div class="meta-value">托盘右键切换，开启后释放右侧数字区</div>
+        </div>
+        <div class="meta-block">
+          <div class="meta-label">更新日期</div>
+          <div class="meta-value">2026-08-09</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <section class="section">
+        <h2>模式切换</h2>
+        <div class="rows">
+          <div class="row"><div class="keys"><kbd>托盘</kbd><kbd>右键</kbd></div><div class="desc">点击 <strong>游戏模式（释放数字区）</strong> 开启或关闭</div></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>全局控制</h2>
+        <div class="rows">
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>J</kbd></div><div class="desc">呼出筋斗云菜单，直接操纵快捷键总表、游戏模式、体检、日志等入口</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>Q</kbd></div><div class="desc">关闭当前最顶层窗口</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>Enter</kbd></div><div class="desc">当前最顶层窗口最大化 / 还原</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>R</kbd></div><div class="desc">呼出 Reader - 英语阅读助手</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>Shift</kbd><kbd>H</kbd></div><div class="desc">还原一键桌面</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>Shift</kbd><kbd>R</kbd></div><div class="desc">基础检查后重载脚本</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>Shift</kbd><kbd>Q</kbd></div><div class="desc">退出筋斗云</div></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>本地应用</h2>
+        <div class="rows">
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>W</kbd></div><div class="desc">微信</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>O</kbd></div><div class="desc">Obsidian</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>Y</kbd></div><div class="desc">网易云音乐</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>I</kbd></div><div class="desc">Google Chrome</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>M</kbd></div><div class="desc">媒体播放器</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>Shift</kbd><kbd>V</kbd></div><div class="desc">GW</div></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>AI 矩阵</h2>
+        <div class="rows">
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>X</kbd></div><div class="desc">Codex</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>A</kbd></div><div class="desc">ChatGPT</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>G</kbd></div><div class="desc">Gemini</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>D</kbd></div><div class="desc">单词突围</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>Shift</kbd><kbd>D</kbd></div><div class="desc">DeepSeek</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>N</kbd></div><div class="desc">NotebookLM</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>Shift</kbd><kbd>N</kbd></div><div class="desc">将剪贴板内容交给 Agent Note 流程</div></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Google 与常用网页</h2>
+        <div class="rows">
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>T</kbd></div><div class="desc">Google Tasks</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>K</kbd></div><div class="desc">Google Keep</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>S</kbd></div><div class="desc">浏览器版微信读书</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>F</kbd></div><div class="desc">桌面版飞书</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>C</kbd></div><div class="desc">Google Calendar</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>B</kbd></div><div class="desc">Bilibili</div></div>
+          <div class="row"><div class="keys"><kbd>Numpad9</kbd></div><div class="desc">翻译选中文本；若未选中，则只打开 Google 翻译</div></div>
+          <div class="row"><div class="keys"><kbd>NumpadAdd</kbd></div><div class="desc">Chrome 标签页相关菜单</div></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>媒体控制</h2>
+        <p class="section-note">仅在媒体播放器相关场景下生效，尽量不抢别的窗口。</p>
+        <div class="rows">
+          <div class="row"><div class="keys"><kbd>Space</kbd></div><div class="desc">播放 / 暂停（播放器窗口激活时）</div></div>
+          <div class="row"><div class="keys"><kbd>Ctrl</kbd><kbd>Left</kbd></div><div class="desc">后退</div></div>
+          <div class="row"><div class="keys"><kbd>Ctrl</kbd><kbd>Right</kbd></div><div class="desc">前进</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>Shift</kbd><kbd>Space</kbd></div><div class="desc">全局备用播放 / 暂停</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>Shift</kbd><kbd>Left</kbd></div><div class="desc">全局备用后退</div></div>
+          <div class="row"><div class="keys"><kbd>Alt</kbd><kbd>Shift</kbd><kbd>Right</kbd></div><div class="desc">全局备用前进</div></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>数字区</h2>
+        <p class="section-note">游戏模式开启时，这一整组数字区热键暂停接管，右侧数字键全部归还给当前游戏。</p>
+        <div class="rows">
+          <div class="row"><div class="keys"><kbd>Numpad7</kbd></div><div class="desc">截图</div></div>
+          <div class="row"><div class="keys"><kbd>Numpad8</kbd></div><div class="desc">录屏</div></div>
+          <div class="row"><div class="keys"><kbd>NumpadHome</kbd></div><div class="desc">截图（NumLock 关闭）</div></div>
+          <div class="row"><div class="keys"><kbd>NumpadUp</kbd></div><div class="desc">录屏（NumLock 关闭）</div></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="footer">
+      日志位置：<strong>筋斗云安装目录\日志\筋斗云.log</strong><br>
+      文档位置：<strong>筋斗云安装目录\文档\筋斗云-快捷键总表.html</strong><br>
+      这份总表属于长期说明文档；运行产生的体检结果仍放在 <strong>报告/</strong>，启动与异常记录仍放在 <strong>日志/</strong>。
+    </section>
+  </main>
+</body>
+</html>
